@@ -74,7 +74,6 @@ function search_page_post(){
     </table>
     <?php
     $big = 999999999; // need an unlikely integer
-
 echo paginate_links( array(
     'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
     'format' => '?paged=%#%',
@@ -128,9 +127,7 @@ function custom_pagination(){
             'post_status' => 'publish',
             'post_type' => 'test',
         );
-        
         $post_id = wp_insert_post($post_data);
-
         if ($post_id) {
             update_post_meta($post_id, 'text', $about);
             update_post_meta($post_id, 'number', $number);
